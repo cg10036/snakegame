@@ -30,8 +30,11 @@ class Game {
     WINDOW *game_window, *score_window, *mission_window;
 public:
     Game();
+
     ~Game();
+
     void run(int level, Mission mission);
+
     void render(int map[BOARD_Y][BOARD_X]);
 };
 

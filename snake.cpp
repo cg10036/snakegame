@@ -1,11 +1,7 @@
-//
-// Created by 이수혁 on 2023/06/15.
-//
 #include <random>
 
 #include "snake.h"
 #include "board.h"
-
 
 using namespace std;
 

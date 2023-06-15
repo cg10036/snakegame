@@ -1,7 +1,3 @@
-//
-// Created by 이수혁 on 2023/06/15.
-//
-
 #ifndef SNAKEGAME_SNAKE_H
 #define SNAKEGAME_SNAKE_H
 
