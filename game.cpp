@@ -205,8 +205,10 @@ void Game::render(int map[BOARD_Y][BOARD_X], int item_timer, int teleport_timer)
 
 Game::~Game() {
     // 윈도우 삭제
+    delwin(this->timer_window);
     delwin(this->mission_window);
     delwin(this->score_window);
     delwin(this->game_window);
+    delwin(this->item_window);
     endwin();
 }

@@ -15,5 +15,6 @@ int main() {
         }
     }
     game.Game::~Game(); // 소멸자 명시적 실행
-    cout << "Game Clear!" << endl << "나는 이무기가 아니었다!" << endl;
+    cout << "Game Clear!" << endl;
+    cout << "나는 이무기가 아니었다!" << endl << flush;
 }
