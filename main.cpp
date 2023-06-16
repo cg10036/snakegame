@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
     Game game = Game(); // Game 클래스 생성
-    for (int i = 1; i <= 1; i++) {
+    for (int i = 1; i <= 4; i++) {
         try {
             // 레벨별 게임 실행
             game.run(i, {4, 1, 1, 1, 1, 10});
