@@ -23,14 +23,15 @@ enum TYPE {
     HEAD = 1 << 3,
     GROWTH = 1 << 4,
     POISON = 1 << 5,
-    TELEPORT = 1 << 6
+    SUPER_POISON = 1 << 6,
+    TELEPORT = 1 << 7
 };
 
 class GameOver {
 };
 
 class Snake {
-    deque<Pos> snake, growth, poison, teleport;
+    deque<Pos> snake, growth, poison, super_poison, teleport;
     Pos direction[4] = {
             {1,  0}, // right
             {0,  1}, // down
@@ -48,6 +49,8 @@ class Snake {
     int check_growth(Pos pos);
 
     int check_poison(Pos pos);
+
+    int check_super_poison(Pos pos);
 
 public:
     Snake(int level);
@@ -67,6 +70,8 @@ public:
     void reset_growth(int num);
 
     void reset_poison(int num);
+
+    void reset_super_poison(int num);
 
     void reset_teleport(int num = 2); // num should be 0 or 2
 
