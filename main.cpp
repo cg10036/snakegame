@@ -15,6 +15,8 @@ int main() {
         }
     }
     game.Game::~Game(); // 소멸자 명시적 실행
+    setvbuf(stdout, NULL, _IOLBF, 0);
+    setvbuf(stderr, NULL, _IONBF, 0);
     cout << "Game Clear!" << endl;
-    cout << "나는 이무기가 아니었다!" << endl << flush;
+    cout << "나는 이무기가 아니었다!" << endl;
 }
