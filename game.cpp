@@ -155,7 +155,7 @@ void Game::render(int map[BOARD_Y][BOARD_X], int item_timer, int teleport_timer)
                 case TELEPORT:
                     c = "▢";
             }
-            mvwprintw(this->game_window, 1 + i, 1 + j * 2, c);
+            mvwprintw(this->game_window, 1 + i, 1 + j * 2, "%s", c);
         }
     }
 
