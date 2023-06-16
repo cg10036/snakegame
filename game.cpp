@@ -52,7 +52,7 @@ void Game::run(int level, Mission mission) {
     KEY key = TIMEOUT; // 입력 키 받을 변수 초기화
     int teleport_cnt = -1; // 텔레포트시 포탈 유지시키는 용도의 변수
     while (
-            (this->now.now_length < this->mission.length || // 길이가 짧거나
+            (this->now.max_length < this->mission.length || // 길이가 짧거나
              this->now.growth < this->mission.growth || // 아이템을 적게 먹었거나
              this->now.poison < this->mission.poison ||
              this->now.super_poison < this->mission.super_poison ||
@@ -171,7 +171,7 @@ void Game::render(int map[BOARD_Y][BOARD_X], int item_timer, int teleport_timer)
     // 미션 출력
     mvwprintw(this->mission_window, 0, 2, "Mission");
     mvwprintw(this->mission_window, 1, 1, "B: %d (%c) ", this->mission.length,
-              this->now.now_length < this->mission.length ? ' ' : 'v');
+              this->now.max_length < this->mission.length ? ' ' : 'v');
     mvwprintw(this->mission_window, 2, 1, "+: %d (%c) ", this->mission.growth,
               this->now.growth < this->mission.growth ? ' ' : 'v');
     mvwprintw(this->mission_window, 3, 1, "-: %d (%c) ", this->mission.poison,
