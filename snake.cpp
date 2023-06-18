@@ -172,6 +172,9 @@ void Snake::reset_growth(int num) { // Growth 아이템 초기화
                 this->get_random(0, BOARD_Y - 1),
         };
         if (BOARD[this->level][tmp.y][tmp.x] & (WALL | IMMUNE_WALL)) continue;
+        for (Pos j: this->growth) {
+            if (j == tmp) continue;
+        }
         for (Pos j: this->poison) {
             if (j == tmp) continue;
         }
@@ -194,10 +197,13 @@ void Snake::reset_poison(int num) { // Poison 아이템 초기화
                 this->get_random(0, BOARD_Y - 1),
         };
         if (BOARD[this->level][tmp.y][tmp.x] & (WALL | IMMUNE_WALL)) continue;
-        for (Pos j: this->super_poison) {
+        for (Pos j: this->growth) {
             if (j == tmp) continue;
         }
-        for (Pos j: this->growth) {
+        for (Pos j: this->poison) {
+            if (j == tmp) continue;
+        }
+        for (Pos j: this->super_poison) {
             if (j == tmp) continue;
         }
         for (Pos j: this->snake) {
@@ -216,10 +222,13 @@ void Snake::reset_super_poison(int num) {  // Super Poison 아이템 초기화
                 this->get_random(0, BOARD_Y - 1),
         };
         if (BOARD[this->level][tmp.y][tmp.x] & (WALL | IMMUNE_WALL)) continue;
+        for (Pos j: this->growth) {
+            if (j == tmp) continue;
+        }
         for (Pos j: this->poison) {
             if (j == tmp) continue;
         }
-        for (Pos j: this->growth) {
+        for (Pos j: this->super_poison) {
             if (j == tmp) continue;
         }
         for (Pos j: this->snake) {
